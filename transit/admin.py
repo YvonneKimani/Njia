@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Sacco, Stage, Route, RouteStage, FareSchedule, FareReport, SafetyIncident
+from .models import Sacco, Stage, Route, RouteStage, FareSchedule, FareReport, SafetyIncident, LostItem
 
 class FareScheduleInline(admin.TabularInline):
     model = FareSchedule
@@ -45,3 +45,11 @@ class SafetyIncidentAdmin(admin.ModelAdmin):
     list_filter = ('incident_type', 'sacco', 'timestamp')
     search_fields = ('phone_number', 'details')
     readonly_fields = ('timestamp',)
+
+@admin.register(LostItem)
+class LostItemAdmin(admin.ModelAdmin):
+    list_display = ('description', 'sacco', 'plate_number', 'user_phone', 'is_resolved', 'created_at')
+    list_filter = ('sacco', 'is_resolved', 'created_at')
+    search_fields = ('user_phone', 'description', 'plate_number')
+    list_editable = ('is_resolved',)
+    readonly_fields = ('created_at',)

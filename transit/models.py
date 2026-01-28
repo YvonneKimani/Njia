@@ -73,3 +73,12 @@ class SafetyIncident(models.Model):
 
     def __str__(self):
         return f"{self.incident_type} - {self.phone_number}"
+    
+
+class LostItem(models.Model):
+    user_phone = models.CharField(max_length=15)
+    sacco = models.ForeignKey(Sacco, on_delete=models.CASCADE)
+    description = models.TextField()
+    plate_number = models.CharField(max_length=15, blank=True, null=True)
+    is_resolved = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)

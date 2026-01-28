@@ -25,7 +25,15 @@ SECRET_KEY = "django-insecure-#z2e&ky!!8ov(-161!i$g7%7+$3qn&1x4#=&o17+#02*4#e=&2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'zaid-enthetic-timika.ngrok-free.dev',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://zaid-enthetic-timika.ngrok-free.dev',
+]
 
 
 # Application definition
@@ -118,4 +126,4 @@ USE_TZ = True
 STATIC_URL = "static/"
 
 AT_USERNAME = "sandbox"
-AT_API_KEY = "your_api_key_here"
+AT_API_KEY = "atsk_d8b8a80157d5a914adb51c67aeb821d206a1bb5c94b21183962d30854c49c1a401a04932"
