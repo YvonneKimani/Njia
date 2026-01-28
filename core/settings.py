@@ -118,4 +118,4 @@ USE_TZ = True
 STATIC_URL = "static/"
 
 AT_USERNAME = "sandbox"
-AT_API_KEY = "your_api_key_here"
+AT_API_KEY = "atsk_2f98ca88590ba0bc282a81e437445096ec09b3b45c57dc9917653c9be98480a9042181c7"
